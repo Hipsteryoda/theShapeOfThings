@@ -6,7 +6,7 @@ public class Sphere extends Shape {
 
     public Sphere() {
         super();
-        this.radius = 0.0;
+        this.radius = 3.0;
     }
 
     public Sphere(double v) {

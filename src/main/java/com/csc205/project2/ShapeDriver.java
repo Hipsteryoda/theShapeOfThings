@@ -7,20 +7,35 @@ public class ShapeDriver {
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
+    // FIXME: just here to make the code compile
+    ThreeDimensionalShape shape = null;
 
     String choice = getChoice(scnr);
 
     if (choice.equals("cube")) {
-      ThreeDimensionalShape shape = makeCube(scnr);
+      System.out.println("What is the width of the cube?");
+      double width = Double.parseDouble(scnr.nextLine());
+      //shape = new Cube(width);
     }
     else if (choice.equals("sphere")) {
-      ThreeDimensionalShape shape = makeSphere(scnr);
+      System.out.println("What is the radius of the sphere?");
+      double radius = Double.parseDouble(scnr.nextLine());
+      //shape = new Sphere(radius);
     }
     else if (choice.equals("cylinder")) {
-      ThreeDimensionalShape shape = makeCylinder(scnr);
+      System.out.println("What is the height of the cylinder?");
+      double height = Double.parseDouble(scnr.nextLine());
+      System.out.println("What is the width of the cylinder?");
+      double radius = Double.parseDouble(scnr.nextLine());
+      //shape = new Cylinder(height, radius);
+    }
+    else if (choice.equals("icosahedron")) {
+      System.out.println("What is the width of the icosahedron?");
+      double width = Double.parseDouble(scnr.nextLine());
+      //shape = new Icosahedron(width);
     }
 
-    // FIXME: shape cannot be resolved
+    // FIXME: This is not working. String cannot be resolved to a type.
     //shape.toString();
   }
 
@@ -43,37 +58,37 @@ public class ShapeDriver {
     }
     return choice;
   }
-  
-  private static Cube makeCube(Scanner scnr) {
-    double width;
-
-    System.out.println("What is the width of the cube?");
-    width = Double.parseDouble(scnr.nextLine());
-    Cube shape = new Cube(width);
-
-    return shape;
-  }
-
-  private static Sphere makeSphere(Scanner scnr) {
-    double radius;
-
-    System.out.println("What is the radius of the sphere?");
-    radius = Double.parseDouble(scnr.nextLine());
-    Sphere shape = new Sphere(radius);
-
-    return shape;
-  }
-
-  private static Cylinder makeCylinder(Scanner scnr) {
-    double height;
-    double radius;
-
-    System.out.println("What is the height of the cylinder?");
-    height = Double.parseDouble(scnr.nextLine());
-    System.out.println("What is the width of the cylinder?");
-    radius = Double.parseDouble(scnr.nextLine());
-    Cylinder shape = new Cylinder(height, radius);
-
-    return shape;
-  }
+  //
+  //private static Cube makeCube(Scanner scnr) {
+  //  double width;
+  //
+  //  System.out.println("What is the width of the cube?");
+  //  width = Double.parseDouble(scnr.nextLine());
+  //  Cube shape = new Cube(width);
+  //
+  //  return shape;
+  //}
+  //
+  //private static Sphere makeSphere(Scanner scnr) {
+  //  double radius;
+  //
+  //  System.out.println("What is the radius of the sphere?");
+  //  radius = Double.parseDouble(scnr.nextLine());
+  //  Sphere shape = new Sphere(radius);
+  //
+  //  return shape;
+  //}
+  //
+  //private static Cylinder makeCylinder(Scanner scnr) {
+  //  double height;
+  //  double radius;
+  //
+  //  System.out.println("What is the height of the cylinder?");
+  //  height = Double.parseDouble(scnr.nextLine());
+  //  System.out.println("What is the width of the cylinder?");
+  //  radius = Double.parseDouble(scnr.nextLine());
+  //  Cylinder shape = new Cylinder(height, radius);
+  //
+  //  return shape;
+  //}
 }
