@@ -1,13 +1,11 @@
 package com.csc205.project2;
 
-import java.awt.Choice;
 import java.util.Scanner;
 
 public class ShapeDriver {
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
-    // FIXME: just here to make the code compile
     ThreeDimensionalShape shape = null;
 
     String choice = getChoice(scnr);
@@ -15,7 +13,9 @@ public class ShapeDriver {
     if (choice.equals("cube")) {
       System.out.println("What is the width of the cube?");
       double width = Double.parseDouble(scnr.nextLine());
-      //shape = new Cube(width);
+      shape = new Cube(width);
+      System.out.println(shape);
+      drawCube((Cube) shape);
     }
     else if (choice.equals("sphere")) {
       System.out.println("What is the radius of the sphere?");
@@ -34,9 +34,6 @@ public class ShapeDriver {
       double width = Double.parseDouble(scnr.nextLine());
       //shape = new Icosahedron(width);
     }
-
-    // FIXME: This is not working. String cannot be resolved to a type.
-    //shape.toString();
   }
 
   private static String getChoice(Scanner scnr) {
@@ -58,37 +55,46 @@ public class ShapeDriver {
     }
     return choice;
   }
-  //
-  //private static Cube makeCube(Scanner scnr) {
-  //  double width;
-  //
-  //  System.out.println("What is the width of the cube?");
-  //  width = Double.parseDouble(scnr.nextLine());
-  //  Cube shape = new Cube(width);
-  //
-  //  return shape;
-  //}
-  //
-  //private static Sphere makeSphere(Scanner scnr) {
-  //  double radius;
-  //
-  //  System.out.println("What is the radius of the sphere?");
-  //  radius = Double.parseDouble(scnr.nextLine());
-  //  Sphere shape = new Sphere(radius);
-  //
-  //  return shape;
-  //}
-  //
-  //private static Cylinder makeCylinder(Scanner scnr) {
-  //  double height;
-  //  double radius;
-  //
-  //  System.out.println("What is the height of the cylinder?");
-  //  height = Double.parseDouble(scnr.nextLine());
-  //  System.out.println("What is the width of the cylinder?");
-  //  radius = Double.parseDouble(scnr.nextLine());
-  //  Cylinder shape = new Cylinder(height, radius);
-  //
-  //  return shape;
-  //}
+
+  public static void drawCube(Cube cube) {
+    double width = cube.getWidth();
+    int size = (int)width;
+    // Top face
+    System.out.print(" ".repeat(size));
+    System.out.println("_".repeat(size * 2 + 1));
+
+    // Upper half (top and back edges)
+    for (int i = 0; i < size - 1; i++) {
+      //System.out.print(" ");
+      System.out.print(" ".repeat(size - i - 1));
+      System.out.print("/");
+      System.out.print(" ".repeat(size * 2));
+      System.out.print("/");
+      System.out.print(" ".repeat(i));
+      System.out.println("|");
+    }
+
+    // Middle line (front and right edges)
+    //System.out.print(" ");
+    System.out.print("/");
+    System.out.print("_".repeat(size * 2));
+    System.out.print("/");
+    System.out.print(" ".repeat(size - 1));
+    System.out.println("|");
+
+    // Lower half (front and left edges)
+    for (int i = 0; i < size - 1; i++) {
+      System.out.print("|");
+      System.out.print(" ".repeat(size * 2));
+      System.out.print("|");
+      System.out.print(" ".repeat(Math.abs(i - size + 1)));
+      System.out.println("/");
+    }
+
+    // Bottom line
+    System.out.print("|");
+    System.out.print("_".repeat(size * 2));
+    System.out.println("|/");
+  }
+
 }
