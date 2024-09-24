@@ -21,14 +21,12 @@ public class Icosahedron extends Shape {
 
   @Override
   public double volume() {
-    return 2.182 * Math.pow(this.sideLength, 3.0); 
+    return (5.0 / 12.0) * (3.0 + Math.sqrt(5.0)) * Math.pow(this.sideLength, 3.0); 
   }
 
   @Override
   public double surfaceArea() {
-    // 20 * 1/2 * sideLength * height
-    double height = (this.sideLength * Math.sqrt(3.0)) / 2.0;
-    return 20.0 * (0.5 * this.sideLength * height); 
+    return 20.0 * ((Math.sqrt(3.0) / 4.0) * Math.pow(this.sideLength, 2.0));
   }
 
   @Override
