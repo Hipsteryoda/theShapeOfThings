@@ -5,6 +5,7 @@ public class Cube extends Shape {
   private double width;
 
   public Cube() {
+    super();
     this.width = 3.0;
   }
 

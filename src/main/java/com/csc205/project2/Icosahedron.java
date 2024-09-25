@@ -4,10 +4,12 @@ public class Icosahedron extends Shape {
   private double sideLength;
 
   public Icosahedron() {
+    super();
     this.sideLength = 3.0;
   }
 
   public Icosahedron(double sideLength) {
+    super();
     this.sideLength = sideLength;
   }
 

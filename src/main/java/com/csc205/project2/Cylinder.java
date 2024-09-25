@@ -5,11 +5,13 @@ public class Cylinder extends Shape {
   private double radius;
 
   public Cylinder() {
+    super();
     this.height = 0.0;
     this.radius = 0.0;
   }
 
   public Cylinder(double height, double radius) {
+    super();
     this.height = height;
     this.radius = radius;
   }
