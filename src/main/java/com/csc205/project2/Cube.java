@@ -34,7 +34,7 @@ public class Cube extends Shape {
 
   @Override
   public String toString() {
-        final StringBuilder sb = new StringBuilder("Cube {");
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName() + " {");
         sb.append("width=").append(this.width);
         sb.append(", surface area=").append(this.surfaceArea());
         sb.append(", volume=").append(this.volume());

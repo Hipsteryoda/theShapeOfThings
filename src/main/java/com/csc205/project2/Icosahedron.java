@@ -33,7 +33,7 @@ public class Icosahedron extends Shape {
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder("Icosahedron {");
+    StringBuilder sb = new StringBuilder(this.getClass().getSimpleName() + " {");
     sb.append("side length=").append(this.sideLength);
     sb.append(", surface area=").append(this.surfaceArea());
     sb.append(", volume=").append(this.volume());

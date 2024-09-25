@@ -34,7 +34,7 @@ public class Sphere extends Shape {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Sphere {");
+        final StringBuilder sb = new StringBuilder(this.getClass().getSimpleName() + " {");
         sb.append("radius=").append(radius);
         sb.append(", surface area=").append(surfaceArea());
         sb.append(", volume=").append(volume());
