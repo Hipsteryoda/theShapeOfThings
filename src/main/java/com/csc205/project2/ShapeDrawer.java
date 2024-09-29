@@ -2,7 +2,11 @@ package com.csc205.project2;
 
 import java.util.Scanner;
 
+<<<<<<< HEAD
 public class ShapeDrawer {
+=======
+public class ShapeDriver {
+>>>>>>> feat/draw-in-terminal
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
@@ -32,7 +36,13 @@ public class ShapeDrawer {
     else if (choice.equals("icosahedron")) {
       System.out.println("What is the width of the icosahedron?");
       double width = Double.parseDouble(scnr.nextLine());
+<<<<<<< HEAD
       //shape = new Icosahedron(width);
+=======
+      shape = new Icosahedron(width);
+      System.out.println(shape);
+      drawIcosahedron((int)width);
+>>>>>>> feat/draw-in-terminal
     }
   }
 
@@ -41,6 +51,7 @@ public class ShapeDrawer {
     String choice = "";
 
     System.out.println("Which shape would you like to create?");
+<<<<<<< HEAD
     System.out.println("Cube | Sphere | Cylinder | Icosahedron");
     choice = scnr.nextLine().toLowerCase();
 
@@ -51,6 +62,17 @@ public class ShapeDrawer {
       }
       else {
         System.out.println("Please enter either Cube, Sphere, or Cylinder");
+=======
+    System.out.println("Cube | Sphere | Cylinder");
+    choice = scnr.nextLine().toLowerCase();
+
+    while (!valid) {
+      if (choice.equals("cube") || choice.equals("sphere") || choice.equals("cylinder") || choice.equals("icosahedron")) {
+        valid = true;
+      }
+      else {
+        System.out.println("Please enter either Cube, Sphere, Cylinder, or Icosahedron.");
+>>>>>>> feat/draw-in-terminal
         choice = scnr.nextLine();
       }
     }
@@ -98,4 +120,48 @@ public class ShapeDrawer {
     System.out.println("|/");
   }
 
+<<<<<<< HEAD
+=======
+  public static void drawIcosahedron(int size) {
+    // Calculate the number of rows and columns
+    int rows = (2 * size) + 1;
+    int cols = (2 * size) + 1;
+
+    // Create a 2D character array to represent the icosahedron
+    char[][] icosahedron = new char[rows][cols];
+
+    // Initialize the icosahedron with spaces
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            icosahedron[i][j] = ' ';
+        }
+    }
+
+    // Draw the top and bottom triangles
+    for (int i = 0; i <= size; i++) {
+        int start = size - i;
+        int end = size + i;
+        for (int j = start; j <= end; j++) {
+            icosahedron[i][j] = '*';
+        }
+    }
+
+    // Draw the middle triangles
+    for (int i = size + 1; i < rows; i++) {
+        int start = i - size;
+        int end = 2 * size - i;
+        for (int j = start; j <= end; j++) {
+            icosahedron[i][j] = '*';
+        }
+    }
+
+    // Print the icosahedron to the console
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            System.out.print(icosahedron[i][j]);
+        }
+        System.out.println();
+    }
+}
+>>>>>>> feat/draw-in-terminal
 }
