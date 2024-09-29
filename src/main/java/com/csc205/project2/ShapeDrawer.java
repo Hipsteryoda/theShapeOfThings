@@ -2,11 +2,7 @@ package com.csc205.project2;
 
 import java.util.Scanner;
 
-<<<<<<< HEAD
 public class ShapeDrawer {
-=======
-public class ShapeDriver {
->>>>>>> feat/draw-in-terminal
 
   public static void main(String[] args) {
     Scanner scnr = new Scanner(System.in);
@@ -36,13 +32,9 @@ public class ShapeDriver {
     else if (choice.equals("icosahedron")) {
       System.out.println("What is the width of the icosahedron?");
       double width = Double.parseDouble(scnr.nextLine());
-<<<<<<< HEAD
-      //shape = new Icosahedron(width);
-=======
       shape = new Icosahedron(width);
       System.out.println(shape);
       drawIcosahedron((int)width);
->>>>>>> feat/draw-in-terminal
     }
   }
 
@@ -51,18 +43,6 @@ public class ShapeDriver {
     String choice = "";
 
     System.out.println("Which shape would you like to create?");
-<<<<<<< HEAD
-    System.out.println("Cube | Sphere | Cylinder | Icosahedron");
-    choice = scnr.nextLine().toLowerCase();
-
-    while (!valid) {
-      if (choice.equals("cube") || choice.equals("sphere") || 
-          choice.equals("cylinder") || choice.equals("icosahedron")) {
-        valid = true;
-      }
-      else {
-        System.out.println("Please enter either Cube, Sphere, or Cylinder");
-=======
     System.out.println("Cube | Sphere | Cylinder");
     choice = scnr.nextLine().toLowerCase();
 
@@ -72,7 +52,6 @@ public class ShapeDriver {
       }
       else {
         System.out.println("Please enter either Cube, Sphere, Cylinder, or Icosahedron.");
->>>>>>> feat/draw-in-terminal
         choice = scnr.nextLine();
       }
     }
@@ -120,8 +99,6 @@ public class ShapeDriver {
     System.out.println("|/");
   }
 
-<<<<<<< HEAD
-=======
   public static void drawIcosahedron(int size) {
     // Calculate the number of rows and columns
     int rows = (2 * size) + 1;
@@ -163,5 +140,4 @@ public class ShapeDriver {
         System.out.println();
     }
 }
->>>>>>> feat/draw-in-terminal
 }
